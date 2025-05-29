@@ -1,0 +1,46 @@
+<table class="timetable">
+                        <thead>
+                            <tr>
+                                <td></td>
+                                <th id="Monday">Luni</th>
+                                <th id="Tuesday">Marți</th>
+                                <th id="Wednesday">Miercuri</th>
+                                <th id="Thursday">Joi</th>
+                                <th id="Friday">Vineri</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th id="8">8:00</th>
+                                <td class="subject" id="d1h8">Română</td>
+                                <td class="subject" id="d2h8">Română</td>
+                                <td class="subject" id="d3h8">Engleză</td>
+                                <td class="subject" id="d4h8">Sport</td>
+                                <td class="subject" id="d5h8">Română</td>
+                            </tr>
+                            <tr>
+                                <th id="9">9:00</th>
+                                <td class="subject" id="d1h9">Matematică</td>
+                                <td class="subject" id="d2h9">Matematică</td>
+                                <td class="subject" id="d3h9">Religie</td>
+                                <td class="subject" id="d4h9">Română</td>
+                                <td class="subject" id="d5h9">Engleză</td>
+                            </tr>
+                            <tr>
+                                <th id="10">10:00</th>
+                                <td class="subject" id="d1h10">Sport</td>
+                                <td class="subject" id="d2h10">Civică</td>
+                                <td class="subject" id="d3h10">Română</td>
+                                <td class="subject" id="d4h10">Matematică</td>
+                                <td class="subject" id="d5h10">Matematică</td>
+                            </tr>
+                            <tr>
+                                <th id="11">11:00</th>
+                                <td class="subject" id="d1h11">AVAP</td>
+                                <td class="subject" id="d2h11">Joc și mișcare</td>
+                                <td class="subject" id="d3h11">Științe</td>
+                                <td class="subject" id="d4h11">AVAP</td>
+                                <td class="subject" id="d5h11">Muzică</td>
+                            </tr>
+                        </tbody>
+                    </table>

@@ -1,0 +1,277 @@
+<!-- Orarul clasei 3A -->
+
+<!DOCTYPE html>
+<html lang="ro">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Orar 3A</title>
+        <meta
+            name="description"
+            content="Orarul clasei 3A din școala gimnazială nr. 27, în anul școlar 2024-2025" />
+        <link rel="shortcut icon" href="img/calendar-icon.png" type="image/png" />
+        <link rel="stylesheet" href="style.css" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    </head>
+    <body>
+        <div id="background-overlay"></div>
+        <div class="biggest-container">
+            <div class="header">
+                <button id="settingsButton" class="btn" title="Setări">
+                    <i class="fa-solid fa-gear"></i>
+                </button>
+                <div id="settingsMenu" class="settings-menu">
+                    <button
+                        id="switchTheme"
+                        class="btn"
+                        onclick="changeTheme()"
+                        title="Schimbă tema">
+                        <i id="themeIcon" class="fa-regular fa-sun"></i>
+                    </button>
+                    <div class="color-picker" title="Alege o culoare de accent">
+                        <button id="colorPickerButton" class="btn">
+                            <i class="fa-solid fa-paintbrush"></i>
+                        </button>
+                        <input type="color" id="accentColorPicker" value="#6196ff" />
+                    </div>
+                    <button id="bgImageButton" class="btn" title="Alege imagine de fundal">
+                        <i class="fa-solid fa-image"></i>
+                    </button>
+                    <input type="file" id="bgImageInput" accept="image/*" style="display: none" />
+                </div>
+                <h1 class="title">3A</h1>
+            </div>
+
+            <div class="big-container">
+                <div class="timetable-wrapper">
+                    <table class="timetable">
+                        <thead>
+                            <tr>
+                                <td></td>
+                                <th id="Monday">Luni</th>
+                                <th id="Tuesday">Marți</th>
+                                <th id="Wednesday">Miercuri</th>
+                                <th id="Thursday">Joi</th>
+                                <th id="Friday">Vineri</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th id="8">8:00</th>
+                                <td class="subject" id="d1h8">
+                                    Română <img src="img/ro.png" alt="RO" class="text-img" />
+                                </td>
+                                <td class="subject" id="d2h8">
+                                    Română <img src="img/ro.png" alt="RO" class="text-img" />
+                                </td>
+                                <td class="subject" id="d3h8">
+                                    Engleză <img src="img/en.png" alt="EN" class="text-img" />
+                                </td>
+                                <td class="subject" id="d4h8">Sport ⚽</td>
+                                <td class="subject" id="d5h8">
+                                    Română <img src="img/ro.png" alt="RO" class="text-img" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th id="9">9:00</th>
+                                <td class="subject" id="d1h9">Mate 📐</td>
+                                <td class="subject" id="d2h9">Mate 📐</td>
+                                <td class="subject" id="d3h9">Religie ☦️</td>
+                                <td class="subject" id="d4h9">
+                                    Română <img src="img/ro.png" alt="RO" class="text-img" />
+                                </td>
+                                <td class="subject" id="d5h9">
+                                    Engleză <img src="img/en.png" alt="EN" class="text-img" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th id="10">10:00</th>
+                                <td class="subject" id="d1h10">Sport ⚽</td>
+                                <td class="subject" id="d2h10">Civică 🪪</td>
+                                <td class="subject" id="d3h10">
+                                    Română <img src="img/ro.png" alt="RO" class="text-img" />
+                                </td>
+                                <td class="subject" id="d4h10">Mate 📐</td>
+                                <td class="subject" id="d5h10">Mate 📐</td>
+                            </tr>
+                            <tr>
+                                <th id="11">11:00</th>
+                                <td class="subject" id="d1h11">AVAP 🎨</td>
+                                <td class="subject" id="d2h11">Mișcare 🕺</td>
+                                <td class="subject" id="d3h11">Științe 🥀</td>
+                                <td class="subject" id="d4h11">AVAP 🎨</td>
+                                <td class="subject" id="d5h11">Muzică 🎹</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="info-panel">
+                    <div class="weather-container" id="weather">
+                        <div class="weather-emoji" id="weather-emoji">🌤️</div>
+                        <div class="weather-temp" id="weather-temp">--°C</div>
+                        <div class="weather-desc" id="weather-desc">Loading...</div>
+                        <div class="weather-location" id="weather-location">
+                            <i id="location-dot" class="fa-solid fa-location-dot"></i>
+                        </div>
+
+                        <div class="weather-sun">
+                            <p>🌅 Sunrise: <span id="sunrise">--:--</span></p>
+                            <p>🌇 Sunset: <span id="sunset">--:--</span></p>
+                        </div>
+                        <div class="time-display" id="hourOfTheDay"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="todo-container">
+            <div class="todo-card">
+                <h2>To-Do List</h2>
+                <ul class="todo-list">
+                    <!-- Tasks will be dynamically added here -->
+                </ul>
+                <div class="add-task">
+                    <input type="text" placeholder="Add a new task..." />
+                    <button>Add</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="boss-container">
+            <div class="container">
+                <h2>AVAP</h2>
+                <a
+                    href="https://manuale.edu.ro/manuale/Clasa%20a%20III-a/Arte%20vizuale%20si%20abilitati%20practice/Uy5DLiBBUlMgTElCUkkg/"
+                    target="_blank"
+                    ><img src="img/avap.jpg" alt="Manual AVAP"
+                /></a>
+            </div>
+
+            <div class="container">
+                <h2>Civică</h2>
+                <a
+                    href="https://manuale.edu.ro/manuale/Clasa%20a%20III-a/Educatie%20Civica/Uy5DLiBBUlMgTElCUkkg/"
+                    target="_blank"
+                    ><img src="img/civica.jpg" alt="Manual Civică"
+                /></a>
+            </div>
+
+            <div class="container">
+                <h2>Engleză</h2>
+                <a
+                    href="https://manuale.edu.ro/manuale/Clasa%20a%20III-a/Limba%20moderna%20engleza/Uy5DLiBVTklTQ0FOIEdS/"
+                    target="_blank"
+                    ><img src="img/engleza.jpeg" alt="Manual Engleză"
+                /></a>
+            </div>
+
+            <div class="container">
+                <h2>Mate</h2>
+                <a
+                    href="https://manuale.edu.ro/manuale/Clasa%20a%20III-a/Matematica/Uy5DLiBBUlQgS0xFVFQg/#book/00"
+                    target="_blank"
+                    ><img src="img/mate.jpg" alt="Manual Mate"
+                /></a>
+            </div>
+
+            <div class="container">
+                <h2>Muzică</h2>
+                <a
+                    href="https://manuale.edu.ro/manuale/Clasa%20a%20III-a/Muzica%20si%20miscare/Uy5DLiBJTlRVSVRFWFQg/"
+                    target="_blank"
+                    ><img src="img/muzica.png" alt="Muzica"
+                /></a>
+            </div>
+
+            <div class="container">
+                <h2>Religie</h2>
+                <a
+                    href="https://manuale.edu.ro/manuale/Clasa%20a%20III-a/Religie%20Cultul%20Ortodox/Uy5DLiBBS0FERU1PUyBB/"
+                    target="_blank"
+                    ><img src="img/religie.jpg" alt="Religie"
+                /></a>
+            </div>
+
+            <div class="container">
+                <h2>Română</h2>
+                <a
+                    href="https://manuale.edu.ro/manuale/Clasa%20a%20III-a/Limba%20si%20literatura%20romana/Uy5DLiBBUlMgTElCUkkg/"
+                    target="_blank"
+                    ><img src="img/romana.jpg" alt="Română"
+                /></a>
+                <br />
+            </div>
+
+            <div class="container">
+                <h2>Științe</h2>
+                <a
+                    href="https://manuale.edu.ro/manuale/Clasa%20a%20III-a/Stiinte%20ale%20naturii/Uy5DLiBBUlQgS0xFVFQg/"
+                    target="_blank"
+                    ><img src="img/stiinte.jpeg" alt="Manual Științe"
+                /></a>
+                <br />
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <h2>Orar 3A - Școala Gimnazială nr. 27</h2>
+                <h2>2024-2025</h2>
+                <h3>Creat de Mocanu Andrei Cristian si Petrescu Matei Razvan</h3>
+                <p>
+                    Aici găsești rapid și ușor orarul complet al clasei 3A, mereu la un click
+                    distanță. Am inclus o temă luminoasă și una întunecată, ca să alegi ce-ți place
+                    mai mult, plus un selector de culoare pentru personalizare. E gândit simplu,
+                    util și elegant – ca să nu pierzi vremea căutând poze sau foi mototolite prin
+                    ghiozdan.
+                </p>
+                <p>
+                    Ține cont că acest website nu este tocmai optimizat pentru a funcționa perfect
+                    pe telefon.
+                </p>
+                <p>Controale:</p>
+                <ul>
+                    <li>click pe o materie = evidențiere</li>
+                    <li>
+                        ` = pornește/oprește imaginea de fundal (trebuie să existe o imagine deja
+                        selectată)
+                    </li>
+                    <li>
+                        To-Do List
+                        <ul>
+                            <li>dublu click pe task = editează conținutul</li>
+                            <li>
+                                drag and drop pentru task-uri = mută poziția (trebuie să existe cel
+                                puțin 2 task-uri)
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="socials">
+                <div id="mocanu-socials">
+                    <h3>Mocanu Andrei Cristian</h3>
+                    <a href="https://www.instagram.com/cristi_mocanu_ro/" target="_blank" class="ig"
+                        ><i class="fa-brands fa-instagram"></i
+                    ></a>
+                    <a
+                        href="https://discordapp.com/users/796067598835515422"
+                        target="_blank"
+                        class="dc"
+                        ><i class="fa-brands fa-discord"></i
+                    ></a>
+                    <a href="https://github.com/mocanuAndreiCristian" target="_blank" class="gh"
+                        ><i class="fa-brands fa-github"></i
+                    ></a>
+                </div>
+            </div>
+        </footer>
+
+        <script src="index.js"></script>
+    </body>
+</html>
